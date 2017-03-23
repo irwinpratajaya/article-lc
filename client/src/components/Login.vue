@@ -44,7 +44,7 @@ export default {
           if (response.data) {
             console.log(response.data);
             localStorage.setItem('token', response.data)
-            window.location.href = "http://localhost:8080"
+            window.location.href = "http://localhost:8080/"
           } else {
             console.log(response);
             self.$router.go('/login')
