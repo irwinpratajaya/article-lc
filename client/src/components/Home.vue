@@ -5,13 +5,13 @@
     <table class="table" id="article">
       <thead>
         <tr>
-          <th>Author</th>
+          <!-- <th>Author</th> -->
           <th>Title</th>
           <th>Content</th>
           <th>Action</th>
         </tr>
       </thead>
-      <!-- <question-list v-bind:questions="questions" v-on:loaded="getData"></question-list> -->
+      <article-list v-bind:articles="articles" v-on:loaded="getData"></article-list>
     </table>
   </div>
 </template>
@@ -19,6 +19,7 @@
 <script>
 import axios from 'axios'
 import ArticlePost from './ArticlePost';
+import ArticleList from './ArticleList';
 
 export default {
   name: 'Home',
@@ -29,7 +30,8 @@ export default {
     }
   },
   components: {
-    ArticlePost
+    ArticlePost,
+    ArticleList
   },
   methods: {
     getData() {
@@ -43,9 +45,6 @@ export default {
           console.log(error)
         })
     }
-  },
-  mounted() {
-    this.getData()
   }
 }
 </script>

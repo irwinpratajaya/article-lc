@@ -79,10 +79,9 @@ export default {
       })
         .then(function (response) {
           console.log(response.data);
-          // self.username = response.data.username
-          // self.email = response.data.email
-          // self.password = response.data.password
-
+          self.username = response.data.username
+          self.email = response.data.email
+          self.password = response.data.password
         })
         .catch(function (error) {
           console.log(error)

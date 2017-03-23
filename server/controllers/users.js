@@ -8,7 +8,6 @@ users.login = function (req,res,next) {
   user.findOne({
     username: req.body.username
   }, function (err,data) {
-    console.log(data);
     if (err) {
       res.json(err)
     } else {
@@ -55,7 +54,6 @@ users.createUser = function (req,res,next) {
   user.create({
     username: req.body.username,
     email: req.body.email,
-    // password: req.body.password
     password: passwordHash.generate(req.body.password)
   }).then (function (data) {
     res.json(data)

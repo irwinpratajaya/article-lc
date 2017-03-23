@@ -7,7 +7,7 @@
 
     <div class="form-group">
       <label for="title">Content</label>
-      <textarea v-model="content" name="content" rows="8" cols="80" class="form-control" placeholder="your question" id="content"></textarea>
+      <textarea v-model="content" name="content" rows="8" cols="80" class="form-control" placeholder="write here.." id="content"></textarea>
     </div>
 
     <button v-on:click="articlePost" class="btn btn-success">Submit</button>
@@ -30,10 +30,11 @@ export default {
       axios.post('http://localhost:3000/', {
         title: this.title,
         content: this.content
+        // author: this.user.author
       })
         .then(function (response) {
           console.log(response.data);
-          // self.title = response.data
+          self.title = response.data
         })
         .catch(function (error) {
           console.log(error)

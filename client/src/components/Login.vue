@@ -11,7 +11,7 @@
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" v-model="password" required>
 
-      <button type="submit" v-on:click="login">SignIn</button>
+      <button type="submit" v-on:click="login">Sign In</button>
     </div>
 
     <span>or</span>
